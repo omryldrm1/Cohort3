@@ -1,0 +1,43 @@
+integer x=12;
+integer y=18;
+
+//maximum of two number
+system.debug(Math.max(x, y));
+
+//minimum of two numbers
+system.debug(Math.min(x,y));
+
+//bir sayıyı böldüğümüzde kalan bulma
+system.debug(Math.mod(y, x));
+
+//absolute value: mutlak değer
+system.debug(Math.abs(-9));
+
+//karekök bulma
+system.debug(Math.sqrt(x));
+
+//uslu ifadeler:bir sayının ussunu bulma
+system.debug(Math.pow(x, y));
+
+//rastgele sayı
+system.debug(Math.random());
+
+//ondalık sayıyı yakın tarafa yuvarlama
+system.debug(Math.round(4.7));
+system.debug(Math.round(4.5));
+
+//ondalık sayıyı aşağı yuvarlama
+system.debug(Math.floor(4.7));
+
+//ondalık sayıyı yukarı yuvarlama
+system.debug(Math.ceil(4.7));
+system.debug(Math.ceil(4.1));
+
+//pi sayısı kullanma
+system.debug(Math.PI);
+
+Decimal a=100;
+system.debug(Math.sqrt(a));
+
+
+
