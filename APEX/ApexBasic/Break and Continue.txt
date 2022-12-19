@@ -1,0 +1,32 @@
+// break 'dur ilerleme'
+
+for (integer i=1; true; i++){
+    system.debug(i);
+    
+    if(i==10){
+        break;
+    }
+    
+}
+//continue 'almadan devam et'
+
+for (integer i=1; i<=50; i++){
+   
+    
+    if(i==22 || i==31){
+        continue;
+    }
+     system.debug(i);
+}
+
+//math method
+
+for (integer i=1; i<=50; i++){
+   
+    if(math.mod(i,2)==0 || Math.mod(i, 5)==0){
+        
+        continue;
+    }
+    system.debug(i);
+}
+

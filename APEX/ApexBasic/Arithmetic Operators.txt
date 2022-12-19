@@ -1,0 +1,67 @@
+//integer x=12;
+//integer y=8;
+
+//Toplama
+integer sum=x+y;
+system.debug('sum of '+x+' and '+y+' is '+ sum);
+
+//Difference
+integer difference=x-y;
+system.debug('The difference between '+  x + ' and '+ y + ' is '+ difference);
+
+//multiplication
+integer times=x*y;
+System.debug(' The product of ' + x + ' and '+ y + ' is '+ times);
+
+//Division (kalanı bölmez)
+integer quotient= x/y;
+system.debug('The quotient of '+ x + ' and '+ y + ' is ' + quotient);
+
+//increment Operator
+integer a=12;
+a++;
+++a;
+system.debug('The value of a is:'+ a);
+
+//Decrement Operator
+integer b=10;
+b--;
+--b;
+system.debug('The value of b is: '+ b );
+
+//-------------------------------------------
+integer x=5;
+system.debug('The value of x is ' + x);
+x=x+3;
+system.debug('The value of x is: '+ x);
+x=x-4;
+system.debug('The value of x is: '+ x);
+x=x*3;
+system.debug('The value of x is: '+ x);
+x=x/6;
+system.debug('The value of x is: '+ x);
+x++;
+system.debug('The value of x is: '+ x);
+x--;
+system.debug('The value of x is: '+ x);
+
+//-------------------------------------
+
+integer x;
+integer y;
+x=3;
+y=4;
+
+x=x*y; // x= 3*4=12
+
+y++;  // y= 4+1=5
+
+x++;  // x= 12+1=13
+
+x=x*y; // x= 13*5 = 65
+
+x++; // 65+1=66
+
+x=x+y; //x=66+5=71
+
+system.debug('The final value of x is :' + x);
