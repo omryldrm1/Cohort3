@@ -1,0 +1,33 @@
+for (integer i=1; i<=10; i++){
+    system.debug('For loop '+i);
+}
+//-----------------------------
+integer j=1;
+while(j<=10){
+    system.debug('While loop '+j);
+    j++;
+}
+
+integer i=10;
+while(i<=100){
+    i+=7;
+    system.debug(i);
+    i++;
+}
+//----------------------------
+integer n=1;
+do {
+    system.debug('Do while loop '+n);
+    n++;
+}
+while(n<=10);
+
+//-------------------------
+
+i=10;
+for(i=1; i<=100; i+=2){
+    i+=5;
+    system.debug('After adding 5: '+i);
+    i*=2;
+    system.debug('After multiplying by 2: '+i);
+}

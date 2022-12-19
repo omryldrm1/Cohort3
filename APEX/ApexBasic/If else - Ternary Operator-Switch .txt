@@ -1,0 +1,118 @@
+integer x=20;
+
+if(0<1){
+    x+=10;
+}else{
+    x+=20;
+}
+system.debug(x);
+
+integer score=80;
+
+if(score>60){
+system.debug('sınıfı başarıyla geçtiniz');    
+}else{
+    system.debug('kaldınız');
+}
+//-----------------------------------------
+
+score=72;
+
+if(score>90){
+   
+    system.debug('A+');    
+
+}else if(score>80){
+   
+    system.debug('A');
+    
+}else if(score>70){
+   
+    system.debug('B+');
+    
+}else if(score>60){
+   
+    system.debug('B');
+    
+}else if(score>50){
+   
+    system.debug('c');
+}
+
+//---------------------------
+//if
+integer num1 =12;
+
+if(Math.mod(num1,2)==0){
+    system.debug('Even Number');
+}
+else{
+    system.debug('Odd number');
+}
+
+//Ternary Operator
+
+system.debug(Math.mod(num1,2)==0 ? 'Even number' : 'Odd number');
+
+string password='abc123';
+system.debug(password=='abc123' ? 'Correct' : 'Incorrect');
+
+integer x;
+x= (x==null ? 12 : x);
+system.debug(x);
+
+//---------------------------
+
+integer numericday=1;
+
+if(numericday==1){
+    system.debug('Monday');
+}else if(numericday==2){
+    system.debug('Tuesday');
+}else if(numericday==3){
+    system.debug('Wednesday');
+}else if(numericday==4){
+    system.debug('Thursday');
+}else if(numericday==5){
+    system.debug('Friday');
+}else if(numericday==6){
+    system.debug('Saturday');
+}else{
+    system.debug('Sunday');
+}
+
+//------------------------------------
+numericday=8;
+
+switch on numericday{
+    when 1{
+        system.debug('Monday');
+    }when 2{
+        system.debug('Tuesday');
+    }when 3{
+        system.debug('Wednesday');
+    }when 4{
+        system.debug('Thursday');
+     }when 5{
+        system.debug('Friday');
+     }when 6{
+        system.debug('Saturday');
+    }when 7{
+        system.debug('Sunday');
+    }when else{
+        system.debug('1 ile 7 arasında rakam giriniz');
+    }
+}
+
+//----------------------------------------------------------
+numericday=3;
+
+switch on numericday{
+    when 1,2,3,4,5{
+        system.debug('Hafta içi');
+    }when 6,7 {
+        system.debug('Hafta sonu');
+    }when else{
+        system.debug('1 ile 7 arasında rakam giriniz');
+    }
+}
