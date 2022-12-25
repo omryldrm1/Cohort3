@@ -1,0 +1,57 @@
+/*Tanımlanılan iki LIST data type 1 den 20 ye kadar olan sayılar arasında çift olan
+sayıları 1. Listeye eklesin tek olan sayıları 2. Listeye eklesin*/
+
+list<integer> evenNumbers=new list<integer>();
+list<integer> oddNumbers =new list<integer>();
+
+for(integer i=0; i<21; i++){
+    if(math.mod(i,2)==0){
+evenNumbers.add(i);
+    }else{
+        oddNumbers.add(i);
+    }
+        }
+system.debug(oddNumbers);
+system.debug(evenNumbers);
+
+//”Merhaba Dünya “ mesajını 10 defa yazan bir programı herhangi bir döngü yapısıyla oluşturun
+    
+for(integer i=1; i<11; i++){
+    system.debug('Merhaba Dünya '+i);
+}
+    
+integer i=1;
+while(i<11){
+    system.debug('Merhaba dünya while '+i);
+    i++;
+}
+
+integer x=1;
+do{
+    system.debug('Merhaba dünya do loop '+ x);
+    x++;
+}while(x<11);
+
+/*bir öğrencinin Vize ve Final notu hesaplanılacak vize notunun 30% final notunun 70% alınacak
+EĞER ortalama 60 dan küçük ise “Not Durumu: FF “ yazılsın, Değilse EĞER ortalama 61 VE 80 arasındaysa “Not Durumu: CC “
+yazılsın Değilse “Not Durumu: AA “ yazılsın*/
+
+list<integer> vNot=new list<integer>{15,45,50,65,75};
+    list<integer> fNot=new list<integer>{40,50,65,72,88};
+for(integer i=0; i<5;i++){
+    decimal hesap=(Vnot[i]*0.3)+(fNot[i]*0.7);
+    system.debug('Vize Notu: '+vNot[i]+'Final Notu: '+fNot[i]);
+    system.debug('ortalama'+ hesap);
+    if(hesap<60){
+        system.debug('Not Durumu:FF');
+    }else if(hesap<80){
+        system.debug('Not Durumu: CC');
+    }else{
+        system.debug('Not Durumu: AA');
+    }
+system.debug('_____________________________________');
+}
+
+integer x;
+for(x=100;x>0;x++){}
+system.debug(x);
