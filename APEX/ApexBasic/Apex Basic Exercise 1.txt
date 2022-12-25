@@ -1,0 +1,143 @@
+APEX Exercise
+
+// Capture first name and Print "Hello <firstName>!" on the debug console.
+
+string firstname='david';
+system.debug('Hello '+firstname);
+
+// Write a code that can reverse a text and print on the debug log
+
+string text='Hello David !';
+system.debug(text);
+system.debug(text.reverse());
+
+// Capture Company Name in a variable; trim it and change all letters to uppercase, print on debug console
+
+string companyName='   clarusway ';
+system.debug(companyName.trim().touppercase());
+
+// Write a code that can output text char length, print on debug console
+
+string message=' Hello Guys!';
+system.debug(message.length());
+
+// Write a code to calculate two integers, print on debug console
+
+integer s1=12;
+integer s2=22;
+system.debug('sayi bir: '+s1+' '+'sayi iki :'+s2);
+integer toplam=s1+s2;
+integer fark=s1-s2;
+system.debug(toplam);
+system.debug(fark);
+
+// Write a code to calculate area of a square, print on debug console. (dimensions can be decimal)
+
+decimal line=10.5;
+decimal karealani=line*line;
+system.debug(karealani);
+
+// Write a code to calculate area of a circle, print on debug console (A=PI//r2)
+
+decimal pi=3.14;
+decimal r=1.5;
+decimal alan=pi*r*r;
+system.debug(alan);
+
+// Write a code to calculate age. Use dynamic current date for the current date calculation. Print the age on debug console
+
+integer year=date.today().year();
+integer birtdate=1990;
+integer age=year-birtdate;
+system.debug(age);
+
+// Write a code that can provide a random whole number between 1-60 each time run, print number on debug console
+
+system.debug((math.random()*60).round());
+
+// Print out todays date to debug console, format the date so that users can see MM/dd/YYYY format
+
+system.debug(date.today().format());
+
+// Print out today's date and time to debug console, format the date time so that users can see MM/dd/yyyy hh/mm format
+
+system.debug(datetime.now().format());
+
+// Create a date variable and hold 4th of July 2022 as 'Independence Day'. Print date to debug console
+
+date IndependenceDay=date.newInstance(2022,07,04);
+system.debug('Independence Day: '+IndependenceDay.format());
+
+// Create a shopping list and add egg, milk, banana to shopping list. Print list to debug console
+
+List<string> meyveler=new List<string>();
+meyveler.add('egg');
+meyveler.add('milk');
+meyveler.add('banana');
+system.debug('Alisveris listesi: ' +meyveler);
+
+// Remove milk item from the above list and print list again. Use index to find correct item.
+
+List<string> meyveler=new List<string>();
+meyveler.add('egg');
+meyveler.add('milk');
+meyveler.add('banana');
+system.debug('Alisveris listesi: ' +meyveler);
+meyveler.remove(1);
+system.debug(meyveler);
+
+// Create a days list that can only show unique day (set) values. Add same day to list a couple of time and see if it is printing only one in debug console
+//set<>  Alfabetik yazdirir. dublicate yoktur.
+
+set<string> days=new set<string>();
+days.add('monday');
+days.add('wednesday');
+days.add('monday');
+days.add('sunday');
+
+system.debug(days);
+
+// Remove the unique item from the above list. Confirm empty list on debug console
+
+set<string> days=new set<string>();
+days.add('monday');
+days.add('wednesday');
+days.add('monday');
+days.add('sunday');
+
+system.debug(days);
+days.remove('monday');
+system.debug(days);
+
+
+// Create a Map collection to store student number and student name. Add a couple of students. Print on logs. 
+
+map<integer,string> stuList=new map<integer,string>();
+stuList.put(1,'Fatih');
+stuList.put(2,'Zeynep');
+system.debug('student List: '+stuList);
+
+
+// Remove a student from the above Map list
+
+map<integer,string> stuList=new map<integer,string>();
+stuList.put(1,'Fatih');
+stuList.put(2,'Zeynep');
+system.debug('student List: '+stuList);
+stuList.remove('Zeynep');
+system.debug('student List: '+stuList);
+
+// Create an Account record with the 'Clarusway' name (sObject). Print account on debug logs
+
+Account newAccount=new Account();
+newAccount.name=' ISTANBUL ltd. ';
+system.debug(newAccount);
+
+
+// Create a contact record, assign first and last name
+
+Contact newContact=new contact();
+newContact.firstname='David';
+newContact.lastname='Hardy';
+system.debug(newContact.firstname+' '+newContact.lastname);
+
