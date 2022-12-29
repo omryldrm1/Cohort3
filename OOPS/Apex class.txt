@@ -1,95 +1,107 @@
-// Class Construction
-
-public class workers  { //outer class - wrapper class 
-    //INNER CLASS
+public class workers2 {
+   
+         //INNER CLASS
+    public class cohort{
+        //property
+        public string name;
+        public integer session;
+        public integer studentNum;
+    }
     
-    public class course {
-           public string name;
-           public integer session;
-           public integer studentNum;
+            //constructor method
+         public cohort(string cohortName){
+        name=cohortName;
+    }
+    
+    //non static 
+    public string isim;
+    private integer calismaSaati=0;
+    private decimal gelir=0;
+    private decimal gider=0;
+    
+    //static
+    
+    public static integer toplamSaat =0;
+    public static decimal toplamGelir=0;
+    public static decimal toplamGider=0;
+    
+    
+   // method
+   
         
-        //method
-        //constructor method
-         public course(string courseName){
-         name=courseName;
+        public void ekleSaat(integer mesai){
+            calismaSaati+=mesai;
+               toplamSaat+=mesai; 
         }
+         public integer saat(){
+            return calismaSaati;
+            
+        }
+    public void ekleGelir(decimal cash){
+        gelir+=cash;
+        toplamGelir+=cash;
     }
-    // properties ( non static) -- Apex Class Duplication => Alex , Sergio, Osman , Niyazi .......
-    public String name;  
-    private Integer working_hours=0;  // duplicate Class....Alex hours , sergio hours ,. .. ... . 
-    private Decimal income=0;
-    private Decimal expense=0;
-    
-     // properties (Static)  workers
-    private static Integer total_hours=0;  // workers hours... ( alex + Sergio + x+y+z  .. ..  . . ..  ..  . . . )
-    private static Decimal total_income=0;
-    private static Decimal total_expense=0;
-    
-    // method    
-    
-    public workers(string workersName){
-        system.debug('Constructor method is working for:'+workersName);
-        name=workersName;
+    public decimal para(){
+        return gelir;
     }
+    
+    public void borc(decimal borcs){
+        gider+=borcs;
+        toplamGider+=borcs;
+    }
+    public decimal borclar(){
+        return gider;
+    }    
+    
+    
+    
+    }
+    
+    
+    
 
-    public void addHours(Integer howmany){
-        working_hours+=howmany; 
-        total_hours+=howmany; 
-      
-    }
-    public void addIncome(Decimal incomeValue){
-         income+=incomeValue;
-         total_income+=incomeValue;
-    }
-    
-    public void addExpense(Decimal expenseValue){
-        expense+=expenseValue;
-        total_expense+=expenseValue;
-    }
-    
-     public Integer hours(){
-        return working_hours; 
-    }
-    
-    public Decimal incomes(){
-        return income;
-    }
-    
-    public Decimal expenses(){
-        return expense;
-    }
-}
 
 
 //Call Functions.
 
 //datatype variableName = Exp.
 
-workers alex = New workers('Alex Victor');
-workers sergio = New workers('Sergio taco');
-alex.name='Alex Victor';
-alex.addHours(10);
-alex.addIncome(100);
-alex.addExpense(5);
-sergio.name='Sergio Taco';
-sergio.addHours(20);
-sergio.addIncome(200);
-sergio.addExpense(50);
-System.debug('Total WORKERS Income : '+ workers.total_income);
-System.debug('Total WORKERS Hours : '+ workers.total_hours);
-System.debug('Total WORKERS Expense : '+ workers.total_expense);
-System.debug('Alex Hours : '+ alex.hours());
-System.debug('Sergio Hours : '+ sergio.hours());
-System.debug('Alex Income : '+ alex.incomes());
-System.debug('Sergio Income : '+ sergio.incomes());
-System.debug('Alex Expense : '+ alex.expenses());
-System.debug('Sergio Expense : '+ sergio.expenses());
+workers2 david=new workers2();
+workers2 cristiano=new workers2();
 
-workers.course WorkerCourse= new workers.course('salesforce apex');
-system.debug(WorkerCourse.name);
+//assign
 
-List<workers> multiworkers =new List<workers>();
+david.isim='david hardy';
+cristiano.isim='cristiano ronaldo';
+david.ekleSaat(45);
+cristiano.ekleSaat(23);
+david.ekleGelir(50000000);
+cristiano.ekleGelir(65232254);
+david.borc(5698521.5);
+cristiano.borc(365125.5);
 
-multiworkers.add(alex);
-multiworkers.add(sergio);
+//print
+system.debug(david.isim);
+system.debug(cristiano.isim);
+system.debug('david calisma saati: '+ david.saat());
+system.debug('toplam saat: '+ workers2.toplamSaat);
+system.debug('david gelir: '+david.para());
+system.debug('cristiano gelir: '+cristiano.para());
+system.debug('toplam gelir: '+ workers2.toplamGelir);
+system.debug('david borc: '+david.borclar());
+system.debug('cristiano borc: '+cristiano.borclar());
+system.debug('toplam borc: '+workers2.toplamGider);
+
+workers2.cohort workerCohort= new workers2.cohort();
+workerCohort.name='Salesforce Apex'; 
+system.debug(workerCohort.name);
+
+//Listeleme
+List<workers2> multiworkers =new list<workers2>();
+multiworkers.add(david);
+multiworkers.add(cristiano);
 system.debug(multiworkers);
+
+
+
+
