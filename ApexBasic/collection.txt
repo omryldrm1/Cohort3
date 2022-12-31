@@ -1,0 +1,101 @@
+COLLECTION TYPES
+------------------------------------------------------------------
+List<String> accountNames = New List<String>();
+accountNames.add('Apple');
+System.debug(accountNames);System.debug(accountNames.size());
+accountNames.add('Amazon');
+System.debug(0,accountNames);System.debug(accountNames.size());
+accountNames.add('Twitter');
+System.debug(0,accountNames);System.debug(accountNames.size());
+accountNames.add('Ebay');
+System.debug(0,accountNames);System.debug(accountNames.size());
+accountNames.add('Facebook');
+System.debug(0,accountNames);System.debug(accountNames.size());
+accountNames.clear();
+System.debug(0,accountNames);System.debug(accountNames.size());
+accountNames.add('Wallmart');
+System.debug(accountNames);System.debug(accountNames.size());
+System.debug('Listede sahibinden var mı ? ' + accountNames.contains('sahibinden'));
+System.debug('Listede Amazon var mı ? ' + accountNames.contains('amazon'));
+accountNames.remove(4);
+system.debug(accountNames);
+system.debug(accountNames.size());
+system.debug(accountNames[0]); // array
+system.debug(accountNames.get(0); // List
+system.debug(accountNames[1]); // array
+system.debug(accountNames.get(1); // List
+system.debug(accountNames[2]); // array
+system.debug(accountNames.get(2); // List
+List<String> accountNames = New List<String>{eleman1,eleman2};
+accountNames.add('Apple');
+accountNames.add('Amazon');
+accountNames.add('Ebay');
+accountNames.add('facebook');
+accountNames.add('twitter');
+System.debug('ESKİ LİSTE > accountNames :'+accountNames);
+List<String> accounts = accountNames.clone();
+System.debug('YENİ LİSTE > accounts : '+accounts);
+accountNames.add('salesforce');
+System.debug('ESKİ accountNames : '+accountNames);
+System.debug('YENİ accounts : '+accounts);
+Set<String> accName = New Set<String>();
+System.debug(accName);
+accName.add('Apple');
+accName.add('Walmart');
+accName.add('Amazon');
+accName.add('Amazon');
+System.debug('LIST Duplikasyon var : '+accName);
+System.debug('2. Index nedir : '+accName.get(2));
+Set<String> setOfACC = New Set<String>();
+setOfACC.addAll(accName);
+system.debug('List Duplikasyon yok : '+setOfACC);
+Map<String,String> ingTrDic = New Map<String,String>();
+//          K(NO DUP) V(YES DUP)
+ingTrDic.put('book','kitap');
+ingTrDic.put('glass','cam');
+ingTrDic.put('door','kapı');
+ingTrDic.put('car','araba');
+ingTrDic.put('pen','dolma kalem');
+ingTrDic.put('man','adam');
+ingTrDic.put('woman','kadın');
+ingTrDic.put('glass','gözlük'); // update
+ingTrDic.put('summer','yaz');
+ingTrDic.put('write','yaz');
+system.debug(ingTrDic);
+Set<String> ING = ingTrDic.keySet();
+// List<String> ING = New List<String>();
+// ING.addAll(ingTrDic.keySet());
+System.debug('ING : '+ ING);
+List<String> TR = ingTrDic.values();
+System.debug('TR : '+ TR);
+Map<String,String> CarOwner = New Map<String,String>();
+//          K(NO DUP) V(YES DUP)
+ingTrDic.put('06 XYZ 001','Alex');
+ingTrDic.put('34 ABC 002','VICTOR');
+ingTrDic.put('26 XXX 006','SERGIO');
+ingTrDic.put('06 XYZ 001','HALIT');
+system.debug(CarOwner.containsKey('06 XYZ 001'));
+system.debug(CarOwner.get('06 XYZ 001')); // LIST [3]  .get(3)
+COLLECTION NOTES
+-----------------
+* List  :  - duplikasyona izin var. Aynı eleman birden fazla eklenebilir. index var.  order var.
+List<String> variableName = New List<String>();  // boş liste
+List<String> variableName = New List<String>{'eleman1','eleman2'}; // elemanlı şekilde 
+Ekran çıktısında () ile görülür. 
+.add() methodu ile yeni eleman ekleme.  (eleman)  (index, eleman)
+[index]
+.get(index) elemana ulaşıyoruz.
+.size() listenin boyunu eleman sayısını .
+.remove(index) elemanı siliyoruz. 
+.clear() tüm listeyi siliyoruz.
+.contains(eleman) eleman listede varmı yokmu 
+.clone() liste tamamen kopyalanır. klonelanır.
+= ile alırsam referans oluyor. hangi listeye eleman eklersek ekleyelim 2 sine ekleniyor.
+* SET :  - Duplikasyon'a izin vermiyor... İndex yok.  order yok.
+Set<String> variableName = New Set<String>();
+{} ile gösterilir.
+* MAP : 2 SÜTUNLUDUR. <KEY =DATATYPE, VALUE= DATATYPE>   <Id,Sobject> <String,String> <Integer,String>
+MAP içinden SET üretebililiriz.  (keyset )
+MAP içinden LİST üretebiliriz. (Value) 
+Map için Add methodu = PUT (key,value) ile yapılır.
+{key=value, key=value,key=value}
