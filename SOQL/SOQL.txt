@@ -1,0 +1,32 @@
+list<Account> multiAcc=[SELECT Id, Name, Type, Phone, Industry, AnnualRevenue, 
+(SELECT Id, Name, Phone, Email, Title, Department FROM Contacts),
+(SELECT Id, Name, Amount, CloseDate, StageName, IsWon FROM Opportunities) FROM Account];
+
+for(Account singleAcc:multiAcc){
+    system.debug('🏢 '+ singleAcc.name+ ' ☎️ '+ singleAcc.Phone);
+     
+    for(Contact singleCont:singleAcc.Contacts){
+        system.debug('👨‍💼' + singleCont.name+ '  '+singleCont.Title);
+    }
+    for(opportunity singleOpp:singleAcc.Opportunities){
+        system.debug('💰 '+ singleOpp.Amount +'  '+ singleOpp.CloseDate);
+    }
+    system.debug('---------------------------------');
+}
+
+
+
+
+
+List<AggregateResult> accNameDist=[SELECT Account.name,SUM(Amount), MIN(Amount),AVG(Amount) 
+                                   FROM Opportunity 
+                                   GROUP BY Account.Name];
+
+
+for(AggregateResult AR:accNameDist){
+    SYSTEM.debug('Account name: '+AR.get('Name'));
+        SYSTEM.debug('Total Amount: '+AR.get('expr0'));
+    SYSTEM.debug('AVG Amount: '+AR.get('expr2'));
+
+    
+}
