@@ -1,0 +1,25 @@
+public virtual class Myclass {
+    public void kayit (integer n,string name, string d){
+        map<integer,string> Doktor1=new map<integer,string>();
+        map<integer,string> Doktor2=new map<integer,string>();
+        if(d=='Dahiliye'){
+            Doktor1.put(n, name);
+            system.debug('Dr ismail: '+Doktor1);
+        }else if(d=='Genel Cerrahi'){
+            Doktor2.put(n,name);
+            system.debug('Dr.Feride: '+ Doktor2);
+        }else{
+            system.debug('Hastanemizde aradığınız branş bulunmamaktadır.');
+        }
+        
+    }
+  
+}
+
+//call debug
+
+Myclass x=new Myclass();
+x.kayit(56244,'David','Dahiliye');
+x.kayit(5658,'OMER','Genel Cerrahi');
+x.kayit(546,'fatih','kardiyoloji');
+x.kayit(5464,'mathilda','Dahiliye');

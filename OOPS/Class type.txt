@@ -1,0 +1,58 @@
+     
+    }
+     //non-static void method
+     public void areaRectangeB(){
+         decimal h= 10;
+         decimal b= 11;
+         decimal area = h*b;
+         system.debug('the area rectangle: '+area);
+        
+    }
+    //Static decimal method
+    public static Decimal areaRectangeC(){
+    
+        decimal h= 14;
+        decimal b= 13;
+        decimal area = h*b;
+        system.debug('the area rectangle: '+area);
+        return area;
+       
+     }
+    //non-static decimal method
+      public Decimal areaRectangeD(){
+        decimal h= 9;
+        decimal b= 5;
+        decimal area = h*b;
+        system.debug('the area rectangle: '+area);
+        return area;
+      }
+
+ public static void areaRectangeE(Decimal h,Decimal b){
+        decimal area = h*b;
+        system.debug('the area rectangle: '+area);
+
+ }
+    public void areaRectangeF(Decimal h,Decimal b){
+        decimal area = h*b;
+        system.debug('the area rectangle: '+area);
+
+ } 
+    
+}
+
+//call screen
+
+//AreaCalculations.areaRectangeA();
+
+//AreaCalculations objA= new AreaCalculations();
+//objA.areaRectangeB();
+
+//AreaCalculations.areaRectangeC();
+
+//AreaCalculations objD= new AreaCalculations();
+//objD.areaRectangeD();
+
+//AreaCalculations.areaRectangeE(8,6);
+
+//AreaCalculations objF=new AreaCalculations();
+//objF.areaRectangeF(6,3);
