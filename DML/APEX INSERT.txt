@@ -1,0 +1,28 @@
+Account CW=New account();
+CW.Name='Apex CW';
+insert CW;
+
+List<Contact> multiContact = New List<contact>();
+list<opportunity> multiOp= new list <opportunity>();
+
+for(integer num=1;num<=3;num++){
+    contact singleContact= new Contact();
+    singleContact.Firstname='Apex'+num;
+    singleContact.Lastname ='CW Worker'+num;
+    singleContact.accountid=CW.id;
+  
+    multiContact.add(singleContact);
+    
+    opportunity singleOpportunity=new opportunity();
+    singleOpportunity.Name=CW.name+'new opportunity'+num;
+    singleOpportunity.CloseDate=Date.today()+30;
+    singleOpportunity.StageName='Prospecting';
+    singleOpportunity.accountid=CW.id;
+    
+    multiOp.add(singleOpportunity);
+    
+}
+
+ insert multiContact;
+ insert multiOp;
+
