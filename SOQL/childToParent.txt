@@ -1,0 +1,42 @@
+//Sobject child to parent SOQL
+Account CW=[SELECT id,Name FROM Account WHERE Name='Apex CW 1'];
+
+system.debug(CW);
+system.debug(CW.Name);
+
+//Generic Sobject
+Sobject CWSobj=[SELECT id,Name FROM Account WHERE Name='Apex CW 1'];
+
+System.debug(CWSobj);
+system.debug(CWSobj.get('Name'));
+
+
+Contact SingleContact=
+[SELECT id,name,phone,email,Account.name,Account.Phone 
+ FROM Contact WHERE name='David THREE' LIMIT 1];
+//child
+system.debug(singleContact.id);
+system.debug(singleContact.Name);
+system.debug(singleContact.Phone);
+system.debug(singleContact.Email);
+//parent
+system.debug(singleContact.Account.Name);
+system.debug(singleContact.Account.Phone);
+ system.debug('---------------------------------------------------');
+//Generic SOBJECT
+Sobject singleConSobj=
+    [SELECT id,name,phone,email,Account.name,Account.Phone 
+     FROM Contact WHERE name='David THREE' LIMIT 1];
+
+system.debug(singleConSobj);
+//child
+system.debug(singleConSobj.get('id'));
+system.debug(singleConSobj.get('Name'));
+system.debug(singleConSobj.get('Phone'));
+system.debug(singleConSobj.get('Email'));
+// parent
+system.debug(singleConSobj.getSobject('Account').get('name'));
+system.debug(singleConSobj.getSobject('Account').get('Phone'));
+
+
+

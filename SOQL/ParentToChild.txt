@@ -1,0 +1,50 @@
+//parent to child SOQL
+
+Account CW= [SELECT id,Name, 
+              (SELECT id,Name,phone,Email FROM Contacts),
+              (SELECT id,Name,Amount,CloseDate,StageName FROM Opportunities)
+              FROM Account WHERE name='Apex CW'];
+
+    system.debug('Account Details: ');
+    system.debug(CW.id);
+    system.debug(CW.name);
+    system.debug('related SObject ------ Contacts ');
+    system.debug(CW.Contacts);
+
+for(Contact CoLoop:CW.Contacts){
+    system.debug(CoLoop.Name);
+}
+
+system.debug('related SObjects --- Opportunities ');
+system.debug(CW.Opportunities);
+
+for(Opportunity OpLoop:CW.Opportunities){
+   system.debug(OpLoop.name);
+    system.debug(OpLoop.CloseDate);
+}
+
+
+// generic SObject
+Sobject CWSobj=[SELECT id,Name, 
+              (SELECT id,Name,phone,Email FROM Contacts),
+              (SELECT id,Name,Amount,CloseDate,StageName FROM Opportunities)
+              FROM Account WHERE name='Apex CW'];
+      
+      system.debug('Account Details: ');
+      system.debug(CWSobj.get('id'));
+      system.debug(CWSobj.get('name'));
+                  
+      system.debug('related SObject ------ Contacts ');  
+      //system.debug(CWSobj.getSobjects('Contacts'));
+for(Contact cont:CWSobj.getSobjects('Contacts')){
+system.debug(cont.name);
+}
+
+      system.debug('related SObjects --- Opportunities ');
+      system.debug(CWSobj.getSobjects('Opportunities'));
+
+for(Opportunity OPP:CWSobj.getSobjects('Opportunities')){
+    system.debug(OPP.name);
+    system.debug(OPP.CloseDate);
+    
+}

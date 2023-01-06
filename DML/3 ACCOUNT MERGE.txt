@@ -1,0 +1,25 @@
+//create dublicate
+list<account> ls = new list<account>{
+    new account(name='RAME 0'), 
+    new account(name='RAME 1')};
+    insert ls;
+
+//get MASTER
+Account masterAcc=[SELECT id,name FROM account WHERE name='ACME'];
+//DUBLICATE
+Account mergeAcc=[SELECT id,name FROM account WHERE name='RAME 0'];
+Account merge2Acc=[SELECT id,name FROM account WHERE name='RAME 1'];
+//mergeAcc create contact and insert
+Contact C=New contact(FirstName='David',Lastname='THREE');
+C.Accountid=mergeAcc.id;
+insert C;
+
+//merge2Acc create opp and insert
+Opportunity O=New Opportunity(Name='RAME 1 OP',
+                              closeDate=date.today()+30,
+                              stageName='Prospecting');
+O.AccountId=merge2Acc.id;
+insert O;
+
+// 3 account merge
+DATABASE.Mergeresult[] results=DATABASE.merge(masterAcc, ls, false);
