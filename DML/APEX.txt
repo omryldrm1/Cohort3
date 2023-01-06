@@ -1,3 +1,5 @@
+//insert
+
 Account CW=New account();
 CW.Name='Apex CW';
 insert CW;
@@ -26,3 +28,17 @@ for(integer num=1;num<=3;num++){
  insert multiContact;
  insert multiOp;
 
+
+
+
+//merge
+
+
+Account CW=[SELECT id,name FROM Account 
+                   WHERE name='Apex CW'
+            LIMIT 1];  //There are two Account same name 
+
+Account Big=[SELECT id,name FROM Account 
+            WHERE name='Big Account'];
+
+merge CW Big;
