@@ -1,0 +1,43 @@
+//SObject SOSL
+
+list<list<SObject>> x=[FIND 'ki' IN ALL FIELDS RETURNING Kitap__c(Name),Yazar__c(Name),Yayinevi__c(Name)]; 
+system.debug(x);
+
+Sobject[][] y=[FIND 'co' IN ALL FIELDS RETURNING account(name),contact(name)];
+system.debug(y);
+
+Sobject[][] z=[FIND 'co' IN ALL FIELDS RETURNING Account(name),Contact(name)];
+system.debug(z.get(0));
+system.debug(z.get(1));
+
+SYSTEM.debug(-------Accounts Result: 🤡 ');
+Sobject[][] x=[FIND 'Co' IN ALL FIELDS RETURNING Account(name),Contact(name)];
+
+Account[] a=x.get(0);
+for(Account z:a){
+    system.debug(z.name);
+}
+SYSTEM.debug('/////Contacts Result: 👾');
+Contact[] b=x.get(1);
+for(contact y:b){
+    system.debug(y.Name);
+}
+
+
+list<list<SObject>> x=[FIND '"Ab" or "Ya"' IN ALL FIELDS RETURNING Kitap__c(Name),Yazar__c(Name),Yayinevi__c(Name)];
+
+system.debug('-----RESULTS KITAP');
+Kitap__c[] a=x.get(0);
+for(Kitap__c y:a){
+    system.debug(y.name);
+}
+system.debug('-----RESULTS YAZAR');
+Yazar__c[] b=x.get(1);
+for(yazar__c z:b){
+    system.debug(z.name);
+}
+system.debug('-----RESULTS YAYINEVI');
+Yayinevi__c[] c=x.get(2);
+for(yayinevi__c t:c){
+    system.debug(t.name);
+}

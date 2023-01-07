@@ -1,0 +1,28 @@
+//Relatiaonship class
+
+public class Kitap {
+    public static void Kayit(string y,string yz,string k ){
+        //Yayınevi ekleme
+        yayinevi__c a=new yayinevi__c();
+        a.name=y;
+        insert a;
+        
+        //yazar ekleme
+        yazar__c b=new yazar__c();
+        b.name=yz;
+        b.yayinevi__c=a.id;
+        insert b;
+        
+        //kitap ekleme
+        Kitap__c c=new Kitap__c();
+        c.name=k;
+        c.yazar__c=b.id;
+        insert c;
+
+    }
+}
+
+
+// DEBUG CALL
+
+Kitap.Kayit('yayınevi -1','Yazar -1','Kitap -1');
