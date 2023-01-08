@@ -1,0 +1,24 @@
+ppublic class SinifKontrol {
+
+    public static void Kontrol(string n,boolean z,boolean k,integer d){
+        if(z==true){
+            system.debug(n+' Derse Hoşgeldiniz');
+        }else{
+            system.debug(n+' Sizi dersde göremedik');
+        }
+        
+        if(z==false && d>=3){
+            system.debug(n+' Yolunda gitmeyen bir durum mu var?');
+        }else{
+            system.debug(n+' Umutlu olun');
+        }
+        
+        if(z==false && d>=3 && k==false){
+            system.debug(n+' Birebir görüşmeye alınacak');
+        }
+        
+    }
+}
+//debug screen
+
+SinifKontrol.Kontrol('Ahmet',false,false,3);

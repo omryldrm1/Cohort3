@@ -1,0 +1,10 @@
+List<Account> a=[SELECT id,name,IsDeleted
+            FROM Account ALL ROWS];
+List<Account> b=new List<account>();
+for(Account c:a){
+    if(c.IsDeleted==true){
+        b.add(c);
+        system.debug(c);
+    }
+}
+undelete b;

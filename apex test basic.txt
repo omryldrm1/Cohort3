@@ -1,0 +1,45 @@
+//apex test basic
+
+public class TestDeneme {
+    public static integer Topla(integer a,integer b){
+        return a+b;
+    }
+    public static integer sub(integer x,integer y){
+        return x-y;
+    }
+    public static decimal Divide(Decimal a,Decimal b){
+        return a/b;
+    }
+    public static integer Mul(integer d,integer e){
+        return d*e;
+    }
+}
+
+
+//test code
+
+@isTest
+public class TestDenemeTest {
+
+    @istest
+    public static void TestTopla(){
+        integer s=TestDeneme.Topla(3,2);
+        system.assertEquals(5, s);
+    }
+    @istest
+    public static void TestSub(){
+        integer s=TestDeneme.Sub(5,3);
+        system.assertEquals(2, s);
+    }
+    @istest
+    public static void TestDivide(){
+        decimal s=TestDeneme.divide(8,2);
+        system.assertEquals(4, s);
+    }
+    @istest
+    public static void TestMul(){
+        integer s=TestDeneme.Mul(9,9);
+        system.assertEquals(81, s);
+    }
+    
+}

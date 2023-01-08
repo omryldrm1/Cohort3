@@ -1,0 +1,9 @@
+list<integer> x=new list<integer>();
+for(integer a=1;a<=100;a++){
+   integer b=math.mod(a, 5);
+    integer i=math.mod(a, 2);
+    if(b==0 && i==0){
+        x.add(a);
+    }
+}
+system.debug(x);
