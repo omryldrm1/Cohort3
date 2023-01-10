@@ -1,0 +1,36 @@
+Map<Id,Account> mapAccount = New Map<Id,Account>([SELECT Id,Name,ParentId,phone,
+                                                  accountnumber,Industry 
+                                                  FROM Account WHERE ParentId=Null ]);
+
+//get with id 
+/*
+Set<id>accountIds=mapAccount.keyset();
+
+for(Id accId:accountIds){
+    Account singleAcc=mapAccount.get(accId);
+    
+    system.debug(singleAcc.Name);
+    system.debug(singleAcc.ParentId);
+    system.debug(singleAcc.Phone);
+    system.debug(singleAcc.Industry);
+    system.debug('------------------------');
+}
+*/
+//get with name
+Map<string,account> nameToAccMap = New Map<String,Account>();
+
+//Set<id>accountIds=mapAccount.keyset();
+
+for(Id accId:mapAccount.keyset()){
+    Account singleAcc=mapAccount.get(accId);
+    nameToAccMap.put(singleAcc.Name,singleAcc);
+    }
+Account CW =nameToAccMap.get('Apex CW 1');
+system.debug(CW.Phone);
+
+Account edge = nameToAccMap.get('Edge Communications');
+system.debug(edge.Phone);
+
+Map<Id,Contact>mapContact=New Map<Id,Contact>([SELECT Id,Name,AccountId 
+                                               FROM Contact 
+                                               WHERE AccountId=:accountIds]);
