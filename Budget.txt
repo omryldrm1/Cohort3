@@ -1,0 +1,60 @@
+//BUDGET 
+
+List<Budget__c> multiBudget=New List<Budget__c>();
+List<string> Aylar=new list<string>{
+    'Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'};
+
+            system.debug(Aylar);
+            system.debug(Aylar[2]);
+    
+for(integer x=0;x<12;x++){
+    Budget__c singleBudget=new Budget__c();
+    singleBudget.Name=Aylar[x]+' 2022 Bütçesi ';
+    multiBudget.add(singleBudget);
+}
+insert multiBudget;
+
+    list<income__c> multiIncome= new list<income__c>();
+    list<expense__c> multiExpense= new list<expense__c>();
+
+for(Budget__c loopBudget:multiBudget){
+    
+    Income__c singleIncome=New Income__c();
+    Expense__c singleExpense=new Expense__c();
+    
+    singleIncome.Budget__c=loopBudget.id;
+    singleIncome.Value__c=3000;
+    singleIncome.Income_Source__c='Wage';
+        multiIncome.add(singleIncome);
+        system.debug(singleIncome);
+
+    singleExpense.Budget__c=loopBudget.id;
+    singleExpense.value__c=2000;
+    singleExpense.Expense_source__c='credit card';
+        multiExpense.add(singleExpense);
+        system.debug(singleExpense);
+}
+insert multiIncome;
+insert multiExpense;
+
+
+
+
+//UPDATE
+
+List<Expense__c> multiexpense=[SELECT id,name,budget__r.name ,value__c 
+                               FROM expense__c WHERE Budget__r.name LIKE'%2022%'];
+system.debug(multiexpense);
+
+for(Expense__c ex:multiexpense){
+    ex.value__c=2500;
+    system.debug(ex);
+}
+update multiexpense;
+
+
+
+//DELETE
+list<budget__c> deleteBudget=[SELECT id FROM budget__c WHERE name LIKE '%bütçe%'];
+
+delete deleteBudget;
